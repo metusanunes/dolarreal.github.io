@@ -8,28 +8,33 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            a1.innerHTML = `R$: ${valores.cotacaoCompra}`;
+            a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR}`;
             console.log(valores.cotacaoVenda);
-            //  console.log(valores.dataHoraCotacao);
+            //  console.log(valores.dataHoraCotacao);valores.cotacaoCompra
         }
     };
     request.onerror = function () {
         console.log("Erro:" + request);
     };
     request.send();
-
+    
+    const moeda= '<img id="medaLib"src="assets/img/medaLib.png"  width="59" ></img>';
     const as = ['a1', 'b2', 'c3'];
+    const contai = document.querySelector('.container');
     for (let ass of as) {
-        const contai = document.querySelector('.container');
         const aa = document.createElement('div');
         contai.appendChild(aa);
         aa.id = ass;
         console.log(aa);
 
     }
-    a1.innerHTML = "";
-    b2 = [];
+    let imputD = '<input class = "ndola"></input>';
+    let imputR = '<input class = "nreal"></input>';
+
+        
     c3.innerHTML = data;
+    b2 = [];
+
 }
 a();
 const efeit = function () {
