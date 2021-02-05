@@ -8,9 +8,10 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR}`;
+            const doll = valores.cotacaoCompra;
+            a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR} `;
             console.log(valores.cotacaoVenda);
-            //  console.log(valores.dataHoraCotacao);valores.cotacaoCompra
+            //  console.log(valores.dataHoraCotacao);
         }
     };
     request.onerror = function () {
@@ -29,11 +30,12 @@ const a = function () {
 
     }
     let imputD = '<input class = "ndola"></input>';
-    let imputR = '<input class = "nreal"></input>';
-
+    let imputR = `<input class = "nreal"   placeholder= ></input>`;
+    var n = document.querySelector('.nreal');
+   
         
     c3.innerHTML = data;
-    b2 = [];
+    b2 = '';
 
 }
 a();
