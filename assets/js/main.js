@@ -59,3 +59,4 @@ const efeit = function () {
     }
 }
 efeit();
+alert(21);
