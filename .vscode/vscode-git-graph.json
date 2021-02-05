@@ -1,0 +1,19 @@
+{
+    "includeCommitsMentionedByReflogs": true,
+    "onlyFollowFirstParent": true,
+    "pullRequestConfig": {
+        "provider": "github",
+        "hostRootUrl": "https://github.com",
+        "sourceRemote": "origin",
+        "sourceOwner": "metusanunes",
+        "sourceRepo": "dolarreal.github.io",
+        "destRemote": "origin",
+        "destOwner": "metusanunes",
+        "destRepo": "dolarreal.github.io",
+        "destProjectId": "",
+        "destBranch": "main",
+        "custom": null
+    },
+    "showRemoteBranches": true,
+    "exportedAt": 1612535350557
+}
