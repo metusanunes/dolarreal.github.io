@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 :root {
-  --primary-color: rgb(17, 86, 102);
+  --primary-color: rgb(255, 255, 255);
   --primary-color-darker: rgb(9, 48, 56);
 }
 
@@ -21,7 +21,7 @@ body {
 .container {
   max-width: 640px;
   margin: 50px auto;
-  background: #fff;
+  background: rgba(172, 172, 172, 0.412);
   padding: 20px;
   border-radius: 10px;
 }
@@ -55,4 +55,37 @@ form button {
 
 form button:hover {
   background: var(--primary-color-darker);
+}
+
+.dolas li {
+  width: 60px;
+  height: 40px;
+  background-color: rgba(184, 1, 1, 0);
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  animation: up 1s infinite alternate;
+  z-index:-1
+}
+
+@keyframes up {
+  from {
+    /* opacity: 90; */
+    transform: translateY(100);
+  }
+  75% {
+    opacity: 0.1;
+  }
+  to {
+    transform: translateY(-1800px) rotate(780deg);
+  }
+}
+  
+@media (min-width : 330px) {
+  .li {
+      width: 330px;
+      overflow: hidden;
+  
+  
+  }
 }
