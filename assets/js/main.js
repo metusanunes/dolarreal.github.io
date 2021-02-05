@@ -18,7 +18,7 @@ const a = function () {
     };
     request.send();
     
-    const moeda= '<img id="medaLib"src="assets/img/medaLib.png"  width="59" ></img>';
+    const moeda= '<img id="medaLib"src="assets/img/medaLib.png"  width="59"  ></img>';
     const as = ['a1', 'b2', 'c3'];
     const contai = document.querySelector('.container');
     for (let ass of as) {
