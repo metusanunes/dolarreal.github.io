@@ -19,7 +19,6 @@ body {
 }
 
 .container {
-  max-width: 740px;
   margin: 120px auto;
   background: rgba(172, 172, 172, 0.412);
   padding: 50px;
@@ -27,8 +26,19 @@ body {
   align-items: center;
   text-align: center;
 }
-@media (max-width:380px){
 
+@media (min-width:380px){
+  .container {
+    width: 740px;
+
+  }
+}
+@media (max-width:380px){
+.container {
+  width: 410px;
+
+  min-width: 50%;
+}
 }
 
 
@@ -73,12 +83,14 @@ body {
   background: rgba(255, 255, 255, 0.535);
   font-size: 5vw;
 }
+
 .ndola {
   width: 120px;
   border: none;
   background: rgba(255, 255, 255, 0.535);
   font-size: 5vw;
 }
+
 #c3 {
   margin: 20px;
   text-align: right;
