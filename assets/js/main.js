@@ -8,7 +8,7 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            a1.innerHTML = valores.cotacaoCompra;
+            a1.innerHTML = `R$: ${valores.cotacaoCompra}`;
             console.log(valores.cotacaoVenda);
             //  console.log(valores.dataHoraCotacao);
         }
