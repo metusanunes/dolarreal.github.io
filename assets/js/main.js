@@ -64,3 +64,30 @@ const efeit = function () {
     }
 }
 efeit();
+const efeitR = function () {
+
+
+    for (let i = 0; i < 30; i++) {
+        var eP = document.body;
+        var dola = document.createElement('ul');
+        dola.className = 'dolas';
+        eP.appendChild(dola);
+        const dol = document.querySelector("ul.dolas");
+        const li = document.createElement("li");
+        const random = (min, max) => Math.random() * (max - min) + min;
+        const size = Math.floor(random(1, 110));
+        const position = random(1, 100);
+        const delay = random(0, 1);
+        const duration = random(16, 32);
+        li.style.width = `${size}px`;
+        li.style.height = `${size}px`;
+        li.style.bottom = `-${size}px`;
+        li.style.left = `${position}%`;
+        li.style.animationDelay = `${delay}s`;
+        li.style.animationDuration = `${duration}s`;
+        li.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+        li.innerHTML = '<img src="assets/img/realv.png" alt="images" width = "210" ></img>';
+        dol.appendChild(li);
+    }
+}
+efeitR();
