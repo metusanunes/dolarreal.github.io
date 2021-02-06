@@ -8,14 +8,23 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            const doll = valores.cotacaoCompra;
+            const doll = valores.cotacaoCompra;            ;
             a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR} `;
-            console.log(valores.cotacaoVenda);
+            // console.log(valores.cotacaoVenda);
             document.getElementById('nreal').value=doll;
-            console.log(imputR)
+            // console.log(imputR)
             //  console.log(valores.dataHoraCotacao);
-
             
+            const conversao = function (d) {
+                ndola.value= d||1;
+                var cotaDola=doll;
+                var dd = ndola.value;
+                nreal.value *= ndola.value;
+                ndola.value = dd
+};
+conversao()
+
+
         }
     };
     request.onerror = function () {
@@ -30,7 +39,7 @@ const a = function () {
         const aa = document.createElement('div');
         contai.appendChild(aa);
         aa.id = ass;
-        console.log(aa);
+        // console.log(aa);
 
     }
     let imputD = '<input id= "ndola"></input>';
