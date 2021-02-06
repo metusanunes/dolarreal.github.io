@@ -92,7 +92,7 @@ body {
   width: 150px;
   border: none;
   background: rgba(255, 255, 255, 0.344);
-  font-size: 5vw;
+  font-size: 3vw;
 }
 
 @media(min-width:680){
@@ -112,7 +112,7 @@ body {
   width: 120px;
   border: none;
   background: rgba(255, 255, 255, 0.344);
-  font-size: 5vw;
+  font-size: 3vw;
 }
 
 #c3 {
