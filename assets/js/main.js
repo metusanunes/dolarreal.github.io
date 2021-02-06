@@ -1,6 +1,18 @@
 const a = function () {
-    let dat = new Date();
-    const data = dat.toLocaleDateString()
+    function hora() {
+        let dat = new Date();
+        const data = dat.toLocaleDateString()
+        return dat.toLocaleTimeString('pt-BR',{
+            hour12: false
+        })+ " - "+data;
+   
+    }
+    function intervalo() {
+        c3.innerHTML = hora();
+       c3.style.color = 'black';
+    }
+    setInterval(intervalo,1000);
+
     var url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='02/05/2021'&$format=json";
     let request = new XMLHttpRequest();
     request.open('GET', url, true);
@@ -23,6 +35,17 @@ const a = function () {
                 ndola.value = dd
 };
 conversao()
+ndola.addEventListener('keypress', function(e){
+    if(e.keyCode ===13) {
+        resetNreal()
+    }
+    if(!ndola.value) return;
+    conversao(ndola.value)
+});
+function resetNreal() {
+    nreal.value = doll;
+    nreal.focus();
+}
 
 
         }
@@ -47,7 +70,7 @@ conversao()
     var n = document.querySelector('.nreal');
    
         
-    c3.innerHTML = data;
+    // c3.innerHTML =hora+" - "+ data;
 
 }
 a();
