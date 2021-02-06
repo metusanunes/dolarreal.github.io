@@ -1,7 +1,7 @@
 const a = function () {
     let dat = new Date();
     const data = dat.toLocaleDateString()
-    var url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='02/04/2021'&$format=json";
+    var url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='02/05/2021'&$format=json";
     let request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.onload = function () {
@@ -11,7 +11,11 @@ const a = function () {
             const doll = valores.cotacaoCompra;
             a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR} `;
             console.log(valores.cotacaoVenda);
+            document.getElementById('nreal').value=doll;
+            console.log(imputR)
             //  console.log(valores.dataHoraCotacao);
+
+            
         }
     };
     request.onerror = function () {
@@ -29,13 +33,12 @@ const a = function () {
         console.log(aa);
 
     }
-    let imputD = '<input class = "ndola"></input>';
-    let imputR = `<input class = "nreal"   placeholder= ></input>`;
+    let imputD = '<input id= "ndola"></input>';
+    let imputR = `<input id= "nreal"   placeholder= ></input>`;
     var n = document.querySelector('.nreal');
    
         
     c3.innerHTML = data;
-    b2 = '';
 
 }
 a();

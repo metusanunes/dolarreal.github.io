@@ -75,19 +75,44 @@ body {
   }
 }
 #medaLib {
-  margin: -32px 7px;
+  font-size: 0%;
 }
-.nreal {
+@media(min-width:380){
+  #medalib{
+    margin: -32px 7px;
+
+  }
+}
+@media(max-width:410){
+  #medalib{
+    margin: 80px 1px 10px 69px;
+    min-width: 50%;
+  }
+}
+#nreal {
   width: 120px;
   border: none;
-  background: rgba(255, 255, 255, 0.535);
+  background: rgba(255, 255, 255, 0.344);
   font-size: 5vw;
 }
 
-.ndola {
+@media(min-width:680){
+  #nreal{
+    margin: -32px 7px;
+    
+  }
+}
+@media(max-width:410){
+  #nreal{
+    background: blue;
+    
+    min-width: 50%;
+  }
+}
+#ndola {
   width: 120px;
   border: none;
-  background: rgba(255, 255, 255, 0.535);
+  background: rgba(255, 255, 255, 0.344);
   font-size: 5vw;
 }
 
