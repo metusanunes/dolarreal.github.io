@@ -118,4 +118,12 @@ body {
 #c3 {
   margin: 20px;
   text-align: right;
+  font-size: 3vw;
+  font-family: 'dosis', sans-serif;
+
+  font-weight: bold;
+  -webkit-text-stroke-width: .8px;
+  -webkit-text-stroke-color: rgb(106, 0, 255);
+
+  color:rgba(255, 255, 255, 0)
 }

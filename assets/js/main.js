@@ -9,7 +9,6 @@ const a = function () {
     }
     function intervalo() {
         c3.innerHTML = hora();
-       c3.style.color = 'black';
     }
     setInterval(intervalo,1000);
 
