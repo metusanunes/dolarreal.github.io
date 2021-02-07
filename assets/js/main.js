@@ -23,10 +23,12 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            const doll = valores.cotacaoCompra.toFixed(2);
+            const doll = valores.cotacaoCompra;
+            const dll = doll.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+            console.log(dll)
             a1.innerHTML = `US$: ${imputD}`;
             a2.innerHTML = ` ${moeda}`;
-            a3.innerHTML = `R$: ${imputR} `;
+            a3.innerHTML = `${imputR} `;
             // console.log(valores.cotacaoVenda);
             document.getElementById('nreal').value = doll;
             // console.log(imputR)
@@ -37,8 +39,11 @@ const a = function () {
                 nreal.value = doll;
                 var cotaDola = doll;
                 var dd = ndola.value;
-                var m = (nreal.value *= ndola.value).toFixed(2);
-                nreal.value = m || doll
+                var m = (nreal.value *= ndola.value);
+                var mm = m.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                console.log(mm)
+                
+                nreal.value = mm || dll
             };
             conversao()
             ndola.addEventListener('keyup', function (e) {
@@ -48,7 +53,8 @@ const a = function () {
                 if (!ndola.value) return;
                 conversao(ndola.value)
             });
-            document.addEventListener('click', function (e) {
+            const cotacao = document.querySelector('.cotacao')
+            ndola.addEventListener('click', function (e) {
                 const el = e.target;
                 if (el.ndola) return;
                 document.getElementById("ndola").select();
