@@ -54,23 +54,43 @@
 .cotacao {
   display: -webkit-inline-flex;
   background: rgba(172, 172, 172, 0.412);
-  padding: 50px;
+  /* padding: 0px 30px; */
   border-radius: 10px;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 @media (min-width:580px){
   .cotacao {
     width: 980px;
-    padding: 0 30px;
-    margin: 0 auto;
+    height: 120px;
+    /* padding: 0 30px; */
 
   }
 }
 @media (max-width:410px){
 .cotacao{
   min-width: 50%;
+}
+}
+.cota{
+  display: -webkit-inline-flex;
+}
+
+@media (min-width:580px){
+  .cota {
+    width: 100%;
+
+  }
+}
+@media (max-width:410px){
+.cota{
+  height: 120px;
+
+  /* border: 3px solid; */
+  width: 2px;
+  min-width: 5%;
 }
 }
 
@@ -109,8 +129,9 @@
 }
 /* #medaLib {
   font-size: 0%;
-  margin: -40px 60px;
-}
+  align-content: center;
+  /* margin: -40px 100px; */
+/* }
 @media(min-width:380){
   #medalib{
 
@@ -121,32 +142,35 @@
     min-width: 50%;
   }
 } */
-#nreal {
-  width: 240px;
-
+#nreal { 
+  width: 430px;
   border: none;
-  background: rgba(242, 255, 0, 0.33);
-  font-size: 3vw;
+  background: rgba(72, 255, 0, 0.33);
+  border-radius: 5%;
+  font-size: 5vw;
 }
 
-@media(min-width:680){
-  #nreal{
-
-    color: aqua;
+  .usd {
+    width: 340px;
+    float: left;
+    margin: 10px 0px 0px 0px;
+    border: none;
+    background: rgba(242, 255, 0, 0.33);
+    font-size: 5vw;
+  
   }
-}
 @media(max-width:410){
-  #nreal{
-font-size: 5vw;    
+  .usd{
+font-size: 19vw;    
     min-width: 50%;
   }
 }
-#ndola {
+/* #ndola {
   width: 180px;
   border: none;
   background: rgba(242, 255, 0, 0.33);
   font-size: 3vw;
-}
+} */
 
 #c3 {
   
@@ -165,7 +189,7 @@ font-size: 5vw;
  
 
 }
-@media(min-width:680){
+/* @media(min-width:680){
   #a1{
     border: 2PX solid;
 
@@ -180,17 +204,16 @@ font-size: 5vw;
     
     min-width: 50%;
   }
-}
+} */
 #a2{
-  width:200px;
- float:none;
- margin: -35px 30px;
+  width:95px;
+ float:right;
+ margin: -35px 120px ;
 
 }
-@media(min-width:680){
+/* @media(min-width:680){
   #a2 {
-    border: 2PX solid;
-
+    width: 3px;
     
   }
 }
@@ -198,30 +221,27 @@ font-size: 5vw;
   #a2{
     border: 2PX solid;
 
-    width: 100%;
+    width: 3px;
     
     min-width: 50%;
   }
 }
 #a3{
   width: 220px;
-  float:right
+  float:left; */
+  /* margin: 0px 0px 0px 0px; */
 }
-@media(min-width:680){
+/* @media(min-width:680){
   #a3{
     float: right;
-    border: 2PX solid;
 
-    margin: -32px 7px;
     
   }
 }
 @media(max-width:410){
   #a3{
-    border: 2PX solid;
 
-    width: 100%;
     
     min-width: 50%;
   }
-}
+} */

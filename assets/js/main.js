@@ -26,26 +26,23 @@ const a = function () {
             const doll = valores.cotacaoCompra;
             const dll = doll.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
             console.log(dll)
-            a1.innerHTML = `US$: ${imputD}`;
+            a1.innerHTML = `${imputD}`;
             a2.innerHTML = ` ${moeda}`;
             a3.innerHTML = `${imputR} `;
             // console.log(valores.cotacaoVenda);
-            document.getElementById('nreal').value = doll;
+            document.getElementById('nreal').value = dll;
             // console.log(imputR)
             //  console.log(valores.dataHoraCotacao);
 
             const conversao = function (d, r) {
-                ndola.value = d || 1
+                ndola.value = d || ''
                 nreal.value = doll;
                 var cotaDola = doll;
                 var dd = ndola.value;
                 var m = (nreal.value *= ndola.value);
-                var mm = m.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-                console.log(mm)
-                
+                var mm = m.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
                 nreal.value = mm || dll
             };
-            conversao()
             ndola.addEventListener('keyup', function (e) {
                 if (e.keyup) {
                     resetNreal()
@@ -53,6 +50,36 @@ const a = function () {
                 if (!ndola.value) return;
                 conversao(ndola.value)
             });
+            function resetNreal() {
+                nreal.value = dll;
+                nreal.focus();
+            }
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+            const conversaoD = function (d, r) {
+                nreal.value = d||dll 
+                var dd = ndola.value;
+                var dr = nreal.value;
+                var d2 = +dr;
+
+                console.log(d2)
+                var md = (d2 /= doll);
+                var d1 = md.toLocaleString('en-US',{style: 'currency', currency: 'USD'});
+                ndola.value = d1||''
+            };
+
+            nreal.addEventListener('keyup', function (e) {
+                if (e.keyup) {
+                    resetNdola()
+                }
+                if (!nreal.value) return;
+                conversaoD(nreal.value)
+            });
+            function resetNdola() {
+                ndola.value = '';
+                ndola.focus();
+            }
+
             const cotacao = document.querySelector('.cotacao')
             ndola.addEventListener('click', function (e) {
                 const el = e.target;
@@ -60,10 +87,12 @@ const a = function () {
                 document.getElementById("ndola").select();
 
             });
-            function resetNreal() {
-                nreal.value = doll;
-                nreal.focus();
-            }
+            nreal.addEventListener('click', function (e) {
+                const el = e.target;
+                if (el.nreal) return;
+                document.getElementById("nreal").select();
+
+            });
 
         }
     };
@@ -73,21 +102,19 @@ const a = function () {
     request.send();
 
     const moeda = '<img id="medaLib"src="assets/img/medaLib.png"  width="89"  ></img>';
-    const as = ['a1', 'a2', 'a3', 'b2', 'c3'];
+    const as = ['a1', 'a2', 'a3'];
     const contai = document.querySelector('.cotacao');
     for (let ass of as) {
         const aa = document.createElement('div');
         contai.appendChild(aa);
+        aa.className = 'cota'
         aa.id = ass;
         // console.log(aa);
 
     }
-    let imputD = '<input id= "ndola"   placeholder="1"></input>';
+    let imputD = '<input class = "usd" id= "ndola"   placeholder="$ 1.00"></input>';
     let imputR = `<input id= "nreal"></input>`;
-    var n = document.querySelector('.nreal');
 
-
-    // c3.innerHTML =hora+" - "+ data;
 
 }
 a();
