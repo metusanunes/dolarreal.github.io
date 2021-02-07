@@ -19,7 +19,7 @@ const a = function () {
         if (request.readyState == 4 && request.status == 200) {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
-            const doll = valores.cotacaoCompra;;
+            const doll = valores.cotacaoCompra.toFixed(2);
             a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR} `;
             // console.log(valores.cotacaoVenda);
             document.getElementById('nreal').value = doll;
@@ -27,11 +27,11 @@ const a = function () {
             //  console.log(valores.dataHoraCotacao);
 
             const conversao = function (d, r) {
-                ndola.value = d || 1;
-                nreal.value = m || doll;
+                ndola.value= d||1
+                nreal.value = doll;
                 var cotaDola = doll;
                 var dd = ndola.value;
-                var m = nreal.value *= ndola.value;
+                var m = (nreal.value *= ndola.value).toFixed(2);
                 nreal.value = m || doll
             };
             conversao()
@@ -42,11 +42,16 @@ const a = function () {
                 if (!ndola.value) return;
                 conversao(ndola.value)
             });
+            document.addEventListener('click',function(e){
+                const el = e.target;
+                if(el.ndola) return;
+                document.getElementById("ndola").select();
+
+            });
             function resetNreal() {
                 nreal.value = doll;
                 nreal.focus();
             }
-
 
         }
     };
@@ -65,8 +70,8 @@ const a = function () {
         // console.log(aa);
 
     }
-    let imputD = '<input id= "ndola"></input>';
-    let imputR = `<input id= "nreal"   placeholder= ></input>`;
+    let imputD = '<input id= "ndola"   placeholder="1"></input>';
+    let imputR = `<input id= "nreal"></input>`;
     var n = document.querySelector('.nreal');
 
 
