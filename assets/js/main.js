@@ -2,13 +2,17 @@ const a = function () {
     function hora() {
         let dat = new Date();
         const data = dat.toLocaleDateString()
+
         return dat.toLocaleTimeString('pt-BR', {
             hour12: false
         }) + " - " + data;
 
     }
+    const relogio= document.querySelector('.relogio');
+
+
     function i() {
-        c3.innerHTML = hora();
+       relogio.innerHTML = hora();
     }
     setInterval(i, 1000);
 
@@ -20,14 +24,16 @@ const a = function () {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
             const doll = valores.cotacaoCompra.toFixed(2);
-            a1.innerHTML = `US$: ${imputD} ${moeda} R$: ${imputR} `;
+            a1.innerHTML = `US$: ${imputD}`;
+            a2.innerHTML = ` ${moeda}`;
+            a3.innerHTML = `R$: ${imputR} `;
             // console.log(valores.cotacaoVenda);
             document.getElementById('nreal').value = doll;
             // console.log(imputR)
             //  console.log(valores.dataHoraCotacao);
 
             const conversao = function (d, r) {
-                ndola.value= d||1
+                ndola.value = d || 1
                 nreal.value = doll;
                 var cotaDola = doll;
                 var dd = ndola.value;
@@ -42,9 +48,9 @@ const a = function () {
                 if (!ndola.value) return;
                 conversao(ndola.value)
             });
-            document.addEventListener('click',function(e){
+            document.addEventListener('click', function (e) {
                 const el = e.target;
-                if(el.ndola) return;
+                if (el.ndola) return;
                 document.getElementById("ndola").select();
 
             });
@@ -61,8 +67,8 @@ const a = function () {
     request.send();
 
     const moeda = '<img id="medaLib"src="assets/img/medaLib.png"  width="89"  ></img>';
-    const as = ['a1', 'b2', 'c3'];
-    const contai = document.querySelector('.container');
+    const as = ['a1', 'a2', 'a3', 'b2', 'c3'];
+    const contai = document.querySelector('.cotacao');
     for (let ass of as) {
         const aa = document.createElement('div');
         contai.appendChild(aa);
