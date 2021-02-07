@@ -137,9 +137,7 @@
 }
 @media(max-width:410){
   #nreal{
-    width: 1%;
-    background: blue;
-    
+font-size: 5vw;    
     min-width: 50%;
   }
 }
@@ -206,7 +204,7 @@
   }
 }
 #a3{
-  width: 320px;
+  width: 220px;
   float:right
 }
 @media(min-width:680){
