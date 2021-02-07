@@ -10,7 +10,7 @@
 }
 
 .bod{
-  background-color:  rgba(95, 158, 160, 0.549);
+  background-color:  rgba(95, 158, 160, 0);
 }
 @media(min-width:580px){
   .bod{
@@ -31,7 +31,7 @@
 }
 @media(min-width:580px){
   .relogio {
-    margin: 1px 90px 40px 1px;
+    margin: 1px 0px 40px 1px;
     text-align: center;
     color: rgb(0, 0, 0);
     font-size: 2vw;
