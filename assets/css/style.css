@@ -52,7 +52,7 @@
 }
 
 .cotacao {
-  display: flex;
+  display: -webkit-inline-flex;
   background: rgba(172, 172, 172, 0.412);
   padding: 50px;
   border-radius: 10px;
@@ -62,7 +62,7 @@
 
 @media (min-width:580px){
   .cotacao {
-    width: 720px;
+    width: 980px;
     padding: 0 30px;
     margin: 0 auto;
 
@@ -142,7 +142,7 @@ font-size: 5vw;
   }
 }
 #ndola {
-  width: 70px;
+  width: 180px;
   border: none;
   background: rgba(242, 255, 0, 0.33);
   font-size: 3vw;
