@@ -41,6 +41,8 @@
 }
 @media(max-width:410px) {
   .relogio {
+    margin: 1px 0px 40px 1px;
+
     width: 410px;
     font-size: 5vw;
     text-align: center;
