@@ -5,11 +5,12 @@
 }
 
 .bod{
+  width: 980px;
+
   background-color:  rgba(95, 158, 160, 0);
 }
 @media(min-width:580px){
   .bod{
-    width: 980px;
     padding: 90px 30px;
     margin: 0 auto;
     display: block;
@@ -19,8 +20,7 @@
 }
 @media(max-width:520px) {
   .bod {
-    width: 100%;
-    display: block;
+    width:520px;
     min-width: 50%;
   }
 }
@@ -48,15 +48,15 @@
 
 .cotacao {
   display: grid;
-  grid-template-columns: 350px 90px 250px;
+  grid-template-columns: 230px 0px 0px;
   grid-gap: 100px;
-  overflow: hidden;
   background: rgba(172, 172, 172, 0);
+  justify-content: center;
 }
 
 @media (min-width:580px){
   .cotacao {
-    width: 980px;
+    width: 720px;
     height: 120px;
     /* padding: 0 30px; */
 
@@ -79,7 +79,7 @@
 
 @media (min-width:580px){
   .cota {
-    width: 100%;
+    width: 10%;
 
   }
 }
@@ -131,7 +131,7 @@
 }
 
 #nreal { 
-  width: 340px;
+  width: 320px;
   height: 90px;
 
   border: none;
@@ -156,7 +156,7 @@
 
 
   .usd {
-    width: 340px;
+    width: 320px;
     height: 90px;
     border: none;
     background: rgba(242, 255, 0, 0.33);

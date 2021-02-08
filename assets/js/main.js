@@ -1,22 +1,25 @@
+function dt(){var data = new Date(),dia  = data.getDate().toString(),diaF = (dia.length == 1) ? '0'+dia : dia,mes  = (data.getMonth()+1).toString(),mesF = (mes.length == 1) ? '0'+mes : mes,    anoF = data.getFullYear();return mesF+"/"+diaF+"/"+anoF;}
+const data =dt();
+
 const a = function () {
     function hora() {
         let dat = new Date();
-        const data = dat.toLocaleDateString()
+        const data = dat.toLocaleDateString();
 
         return dat.toLocaleTimeString('pt-BR', {
             hour12: false
         }) + " - " + data;
 
     }
-    const relogio= document.querySelector('.relogio');
+    const relogio = document.querySelector('.relogio');
 
 
     function i() {
-       relogio.innerHTML = hora();
+        relogio.innerHTML = hora();
     }
     setInterval(i, 1000);
 
-    var url = "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='02/05/2021'&$format=json";
+    var url = `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='${data}'&$format=json`;
     let request = new XMLHttpRequest();
     request.open('GET', url, true);
     request.onload = function () {
@@ -24,14 +27,13 @@ const a = function () {
             var resposta = JSON.parse(request.responseText);
             var valores = resposta.value[0];
             const doll = valores.cotacaoCompra;
-            const dll = doll.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-            console.log(dll)
+            const dll = doll.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
             a1.innerHTML = `${imputD}`;
             a2.innerHTML = ` ${moeda}`;
             a3.innerHTML = `${imputR} `;
             // console.log(valores.cotacaoVenda);
             document.getElementById('nreal').value = dll;
-            // console.log(imputR)
+            // console.log(imputR);
             //  console.log(valores.dataHoraCotacao);
 
             const conversao = function (d, r) {
@@ -40,40 +42,38 @@ const a = function () {
                 var cotaDola = doll;
                 var dd = ndola.value;
                 var m = (nreal.value *= ndola.value);
-                var mm = m.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-                nreal.value = mm || dll
+                var mm = m.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+                nreal.value = mm || dll;
             };
             ndola.addEventListener('keyup', function (e) {
                 if (e.keyup) {
-                    resetNreal()
+                    resetNreal();
                 }
                 if (!ndola.value) return;
-                conversao(ndola.value)
+                conversao(ndola.value);
             });
             function resetNreal() {
                 nreal.value = dll;
                 nreal.focus();
             }
-//////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////
 
             const conversaoD = function (d, r) {
-                nreal.value = d||dll 
+                nreal.value = d || dll
                 var dd = ndola.value;
                 var dr = nreal.value;
-                var d2 = +dr;
-
-                console.log(d2)
+                var d2 = dr;
                 var md = (d2 /= doll);
-                var d1 = md.toLocaleString('en-US',{style: 'currency', currency: 'USD'});
-                ndola.value = d1||''
+                var d1 = md.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                ndola.value = d1 || '';
             };
 
             nreal.addEventListener('keyup', function (e) {
                 if (e.keyup) {
-                    resetNdola()
+                    resetNdola();
                 }
                 if (!nreal.value) return;
-                conversaoD(nreal.value)
+                conversaoD(nreal.value);
             });
             function resetNdola() {
                 ndola.value = '';
@@ -109,7 +109,6 @@ const a = function () {
         contai.appendChild(aa);
         aa.className = 'cota'
         aa.id = ass;
-        // console.log(aa);
 
     }
     let imputD = '<input class = "usd" id= "ndola"   placeholder="$ 1.00"></input>';
