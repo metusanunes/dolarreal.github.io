@@ -121,7 +121,7 @@ a();
 const efeit = function () {
 
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         var eP = document.body;
         var dola = document.createElement('ul');
         dola.className = 'dolas';
@@ -129,13 +129,13 @@ const efeit = function () {
         const dol = document.querySelector("ul.dolas");
         const li = document.createElement("li");
         const random = (min, max) => Math.random() * (max - min) + min;
-        const size = Math.floor(random(1, 110));
-        const position = random(1, 100);
+        const size = Math.floor(random(1, 1));
+        const position = random(1, 50);
         const delay = random(0, 1);
         const duration = random(16, 32);
-        li.style.width = `${size}px`;
-        li.style.height = `${size}px`;
-        li.style.bottom = `-${size}px`;
+        // li.style.width = `${size}px`;
+        // li.style.height = `${size}px`;
+        // li.style.bottom = `-${size}px`;
         li.style.left = `${position}%`;
         li.style.animationDelay = `${delay}s`;
         li.style.animationDuration = `${duration}s`;
@@ -148,7 +148,7 @@ efeit();
 const efeitR = function () {
 
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 10; i++) {
         var eP = document.body;
         var dola = document.createElement('ul');
         dola.className = 'dolas';
@@ -156,13 +156,13 @@ const efeitR = function () {
         const dol = document.querySelector("ul.dolas");
         const li = document.createElement("li");
         const random = (min, max) => Math.random() * (max - min) + min;
-        const size = Math.floor(random(1, 110));
+        // const size = Math.floor(random(1, 1));
         const position = random(1, 100);
         const delay = random(0, 1);
         const duration = random(16, 32);
-        li.style.width = `${size}px`;
-        li.style.height = `${size}px`;
-        li.style.bottom = `-${size}px`;
+        // li.style.width = `${size}px`;
+        // li.style.height = `${size}px`;
+        // li.style.bottom = `-${size}px`;
         li.style.left = `${position}%`;
         li.style.animationDelay = `${delay}s`;
         li.style.animationDuration = `${duration}s`;
