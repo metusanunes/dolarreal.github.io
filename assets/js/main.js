@@ -1,5 +1,19 @@
-function dt(){var data = new Date(),dia  = data.getDate().toString(),diaF = (dia.length == 1) ? '0'+dia : dia,mes  = (data.getMonth()+1).toString(),mesF = (mes.length == 1) ? '0'+mes : mes,    anoF = data.getFullYear();return mesF+"/"+diaF+"/"+anoF;}
-const data =dt();
+function dt() {
+    var data = new Date(),
+    dia =( data.getDate().toString()-1),
+        diaF = (dia.length == 1) ? '0' + dia : dia,
+        mes = (data.getMonth() + 1).toString(),
+        mesF = (mes.length == 1) ? '0' + mes : mes,
+        anoF = data.getFullYear();
+
+        console.log(dia)
+    return mesF + "/" + diaF + "/" + anoF;
+
+
+}
+
+const data = dt();
+console.log(data)
 
 const a = function () {
     function hora() {
