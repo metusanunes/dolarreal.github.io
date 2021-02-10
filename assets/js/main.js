@@ -1,12 +1,12 @@
 function dt() {
     var data = new Date(),
-    dia =( data.getDate().toString()-1),
+    dia =( data.getDate().toString()),
         diaF = (dia.length == 1) ? '0' + dia : dia,
         mes = (data.getMonth() + 1).toString(),
         mesF = (mes.length == 1) ? '0' + mes : mes,
         anoF = data.getFullYear();
-
-        console.log(dia)
+        w = data.getHours('pt-BR',{hour12:false})
+        console.log(w)
     return mesF + "/" + diaF + "/" + anoF;
 
 
