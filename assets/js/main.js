@@ -1,6 +1,6 @@
 function dt() {
     var data = new Date(),
-    dia =( data.getDate().toString())-1,
+    dia =( data.getDate().toString())-2,
         diaF = (dia.length == 1) ? '0' + dia : dia,
         mes = (data.getMonth() + 1).toString(),
         mesF = (mes.length == 1) ? '0' + mes : mes,
